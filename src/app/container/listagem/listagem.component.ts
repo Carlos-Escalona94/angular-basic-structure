@@ -16,4 +16,8 @@ export class ListagemComponent implements OnInit {
     this.service.getListagem().subscribe();
   }
 
+  onDelete(index: number){
+    this.service.onDeleteElemento(index);
+  }
+
 }
