@@ -13,4 +13,12 @@ export class ActionsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAdicionar(){
+    this.service.onAdd();
+  }
+
+  onExcluir(){
+    this.service.onDelete();
+  }
+
 }

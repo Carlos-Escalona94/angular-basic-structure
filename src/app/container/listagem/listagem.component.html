@@ -1,1 +1,7 @@
-<p>listagem works!</p>
+<div fxLayout="column" fxLayoutGap="5px">
+  <mat-card *ngFor="let element of (listagem | async)">
+    <p>{{element}}</p>
+  </mat-card>
+</div>
+
+

@@ -1,1 +1,8 @@
-<p>filter works!</p>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <input type="text" #teste>
+  <button mat-button (click)="onFiltrar()">Filtrar</button>
+  <button mat-button class="mat-icon-button">
+    <mat-icon (click)="onLimparFiltro()">delete</mat-icon>
+  </button>
+</div>
+

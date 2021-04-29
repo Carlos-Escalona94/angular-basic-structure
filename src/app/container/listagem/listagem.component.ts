@@ -8,9 +8,12 @@ import { IListagemService, LISTA_SERVICE } from './listagem-service.interface';
 })
 export class ListagemComponent implements OnInit {
 
+  public listagem = this.service.listagem$;
+
   constructor(@Inject(LISTA_SERVICE) private service: IListagemService) { }
 
   ngOnInit(): void {
+    this.service.getListagem().subscribe();
   }
 
 }

@@ -1,10 +1,11 @@
 import { InjectionToken } from "@angular/core";
+import { Observable } from "rxjs";
 
 export const LISTA_SERVICE = new InjectionToken<IListagemService>('lista.service');
 
 export interface IListagemService{
 
-  listagem: string[];
+  listagem$: Observable<string[]>;
 
   onAddElemento(element: string);
 
@@ -12,6 +13,6 @@ export interface IListagemService{
 
   onEditarElemento(elemento: string, index: number);
 
-  getListagem();
+  getListagem(): Observable<string[]>;
 
 }
