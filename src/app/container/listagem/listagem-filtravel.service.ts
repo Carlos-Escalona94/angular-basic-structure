@@ -5,9 +5,11 @@ import { IListagemService } from './listagem-service.interface';
 export class ListagemFiltravelService implements IListagemService {
 
   public listagem: string[] = [];
+  public listagemSemFiltrar: string[] = [];
 
   constructor() {
     this.listagem = this.getListagem();
+    this.listagemSemFiltrar = this.listagem;
   }
 
   onAddElemento(element: string){
@@ -20,6 +22,10 @@ export class ListagemFiltravelService implements IListagemService {
 
   onEditarElemento(elemento: string, index: number){
     this.listagem[index] = elemento;
+  }
+
+  onFiltrar(f: (paramter: string) => boolean){
+    this.listagem = this.listagemSemFiltrar.filter(l => f(l));
   }
 
   getListagem(){
